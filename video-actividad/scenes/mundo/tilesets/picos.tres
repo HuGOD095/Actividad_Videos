@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" format=3 uid="uid://bckw0yw4k4luh"]
+
+[ext_resource type="Texture2D" uid="uid://d1aq8sila4mxg" path="res://sprites/levels/obstaculos/spikes.png" id="1_j6tiy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8bqci"]
+texture = ExtResource("1_j6tiy")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.4011059, -3.1472921, -0.5583916, 4.3655977, 3.6041565, -3.5533943, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.6041565, 0.91372967, -0.050764084, 5.6854296, 3.5026302, 1.015255, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.6041565, 3.6549196, -0.2538147, 5.6854296, 3.4011059, 4.061021, 8, 8, -8, 8)
+3:0/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_8bqci")

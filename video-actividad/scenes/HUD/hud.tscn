@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bqhsoh8ha55a6"]
+
+[ext_resource type="Texture2D" uid="uid://d13bjmvfh860y" path="res://sprites/levels/items/coin_gold.png" id="1_c0cnr"]
+[ext_resource type="Script" uid="uid://i1cirasjsu2j" path="res://scenes/HUD/hud.gd" id="1_jjobl"]
+[ext_resource type="FontFile" uid="uid://daicfk4t43bhf" path="res://fonts/VT323-Regular.ttf" id="2_glunx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glunx"]
+atlas = ExtResource("1_c0cnr")
+region = Rect2(0, 0, 16, 16)
+
+[node name="ContadorCoins" type="CanvasLayer" unique_id=355951855]
+script = ExtResource("1_jjobl")
+
+[node name="Panel" type="Panel" parent="." unique_id=1085121362]
+modulate = Color(7.2144747, 6.683733, 4.4468412, 0.27058825)
+offset_right = 76.0
+offset_bottom = 43.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1231507743]
+position = Vector2(17, 21)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_glunx")
+
+[node name="Label" type="Label" parent="." unique_id=897602381]
+offset_left = 31.0
+offset_top = 5.0
+offset_right = 72.0
+offset_bottom = 35.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_glunx")
+theme_override_font_sizes/font_size = 30
+text = ":00"

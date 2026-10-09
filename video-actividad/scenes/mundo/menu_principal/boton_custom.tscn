@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ck5mesymxgmmq"]
+
+[ext_resource type="FontFile" uid="uid://daicfk4t43bhf" path="res://fonts/VT323-Regular.ttf" id="1_myb8p"]
+
+[node name="BotonCustom" type="Button" unique_id=156739491]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_myb8p")
+theme_override_font_sizes/font_size = 20
+text = "Boton"
+flat = true

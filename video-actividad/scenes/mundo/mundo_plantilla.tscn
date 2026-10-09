@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://b1nkhuq5da4yw"]
+
+[ext_resource type="Texture2D" uid="uid://c326lbvxiu4cv" path="res://sprites/fondo/clouds.png" id="1_xaaky"]
+[ext_resource type="Texture2D" uid="uid://dkuk2o5768t2l" path="res://sprites/fondo/mountains_a.png" id="2_pm06f"]
+[ext_resource type="Texture2D" uid="uid://ds08a00vcj8ux" path="res://sprites/fondo/mountains_b.png" id="3_6djkk"]
+[ext_resource type="Texture2D" uid="uid://oibj8o2i4elh" path="res://sprites/fondo/trees.png" id="4_ckks3"]
+[ext_resource type="Texture2D" uid="uid://cjdc5rojrbvjh" path="res://sprites/fondo/water_a_8frames.png" id="5_pm06f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xhal"]
+atlas = ExtResource("1_xaaky")
+region = Rect2(0, 0, 64, 20.273468)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20lra"]
+atlas = ExtResource("1_xaaky")
+region = Rect2(0, 33.498142, 64, 15.204685)
+
+[node name="MundoPlantilla" type="Node2D" unique_id=1116797967]
+
+[node name="Cielo" type="Parallax2D" parent="." unique_id=70210144]
+repeat_size = Vector2(640, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Cielo" unique_id=1624102505]
+offset_top = -152.0
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 4
+color = Color(0.35414323, 0.6338806, 0.76212496, 1)
+
+[node name="Nubes1" type="Parallax2D" parent="." unique_id=1603207355]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(640, 0)
+
+[node name="Nube1" type="Sprite2D" parent="Nubes1" unique_id=1821224170]
+modulate = Color(0.88235295, 0.9529412, 0.99607843, 1)
+position = Vector2(530, 80)
+scale = Vector2(3.152343, 3.5989575)
+texture = SubResource("AtlasTexture_2xhal")
+
+[node name="Nube2" type="Sprite2D" parent="Nubes1" unique_id=1759265872]
+modulate = Color(0.88148206, 0.9513586, 0.99463934, 1)
+position = Vector2(166.00002, 136)
+scale = Vector2(4.2929683, 4.5989575)
+texture = SubResource("AtlasTexture_20lra")
+
+[node name="mountain1" type="Parallax2D" parent="." unique_id=54268681]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="mountain1" unique_id=824299293]
+modulate = Color(0.95496017, 0.8754369, 0.90486044, 1)
+position = Vector2(321.00003, 224)
+scale = Vector2(2.5000002, 2.140625)
+texture = ExtResource("2_pm06f")
+
+[node name="Nubes2" type="Parallax2D" parent="." unique_id=1266751598]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(640, 0)
+
+[node name="Nube1" type="Sprite2D" parent="Nubes2" unique_id=710392569]
+modulate = Color(1, 0.972549, 1, 1)
+position = Vector2(454, 170)
+scale = Vector2(1.713867, 2.249739)
+texture = SubResource("AtlasTexture_2xhal")
+
+[node name="Nube2" type="Sprite2D" parent="Nubes2" unique_id=1566762640]
+position = Vector2(341, 103.99999)
+scale = Vector2(1.4511719, 2.2661479)
+texture = SubResource("AtlasTexture_20lra")
+
+[node name="Mountain2" type="Parallax2D" parent="." unique_id=164049094]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountain2" unique_id=6451696]
+modulate = Color(0.8705207, 0.47344184, 0.5143505, 1)
+position = Vector2(321.00003, 227.5)
+scale = Vector2(2.5000002, 2.0703127)
+texture = ExtResource("3_6djkk")
+
+[node name="Arbustos1" type="Parallax2D" parent="." unique_id=1565752620]
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Arbustos1" unique_id=2124591932]
+modulate = Color(0.57035285, 0.5743157, 0.09198805, 1)
+position = Vector2(321.00003, 282.5)
+scale = Vector2(2.5000002, 1.2109375)
+texture = ExtResource("4_ckks3")
+
+[node name="Arbustos2" type="Parallax2D" parent="." unique_id=891150358]
+repeat_size = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Arbustos2" unique_id=1806836893]
+modulate = Color(0.93382967, 0.81200004, 0.14305413, 1)
+position = Vector2(321, 320)
+scale = Vector2(2.5, 0.625)
+texture = ExtResource("4_ckks3")
+flip_h = true
+
+[node name="Agua" type="Parallax2D" parent="." unique_id=1354901885]
+repeat_size = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Agua" unique_id=1107570834]
+position = Vector2(320.49994, 392)
+scale = Vector2(2.5039063, 3.9375005)
+texture = ExtResource("5_pm06f")
+
+[node name="ColorRect" type="ColorRect" parent="Agua" unique_id=481512522]
+offset_top = 448.0
+offset_right = 644.0
+offset_bottom = 747.0
+color = Color(0.06666667, 0.6784314, 0.75686276, 1)

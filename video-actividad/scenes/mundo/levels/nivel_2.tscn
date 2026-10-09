@@ -1,0 +1,51 @@
+[gd_scene format=4 uid="uid://d2tyltpl8j54f"]
+
+[ext_resource type="PackedScene" uid="uid://b1nkhuq5da4yw" path="res://scenes/mundo/mundo_plantilla.tscn" id="1_ryna1"]
+[ext_resource type="TileSet" uid="uid://ct5rlrrkibk4l" path="res://scenes/mundo/tilesets/new_tile_set.tres" id="3_w5k0a"]
+[ext_resource type="PackedScene" uid="uid://uuh3g55v6mj3" path="res://scenes/mundo/items/moneda_custom.tscn" id="5_ys0cc"]
+[ext_resource type="PackedScene" uid="uid://bqhsoh8ha55a6" path="res://scenes/HUD/hud.tscn" id="6_iobt4"]
+[ext_resource type="TileSet" uid="uid://bckw0yw4k4luh" path="res://scenes/mundo/tilesets/picos.tres" id="7_glm3b"]
+[ext_resource type="PackedScene" uid="uid://dahh8u0335s42" path="res://scenes/player/player.tscn" id="7_tx6p5"]
+[ext_resource type="Script" uid="uid://dhwetnu4ffqop" path="res://scenes/mundo/levels/area_2d.gd" id="8_kr1yj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3vhc"]
+size = Vector2(324, 104)
+
+[node name="Nivel2" type="Node2D" unique_id=996037224]
+
+[node name="ContadorCoins" parent="." unique_id=355951855 instance=ExtResource("6_iobt4")]
+
+[node name="MundoPlantilla" parent="." unique_id=1116797967 instance=ExtResource("1_ryna1")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=889797191]
+tile_map_data = PackedByteArray("AAAFABYAAAABAAIAAAAFABcAAAABAAMAAAAFABgAAAABAAQAAAAGABQAAAACAAAAAAAGABUAAAACAAEAAAAGABYAAAACAAIAAAAGABcAAAACAAMAAAAGABgAAAACAAQAAAAHABQAAAADAAAAAAAHABUAAAADAAEAAAAHABYAAAADAAIAAAAHABcAAAADAAMAAAAHABgAAAADAAQAAAAIABUAAAAEAAEAAAAIABYAAAAEAAIAAAAIABcAAAAEAAMAAAAIABgAAAAEAAQAAAAJABQAAAAFAAAAAAAJABUAAAAFAAEAAAAJABYAAAAFAAIAAAAJABcAAAAFAAMAAAAJABgAAAAFAAQAAAAKABUAAAAGAAEAAAAKABYAAAAGAAIAAAAKABcAAAAGAAMAAAAKABgAAAAGAAQAAAAPABMAAAABAAIAAAAPABQAAAABAAMAAAAPABUAAAABAAQAAAAQABEAAAACAAAAAAAQABIAAAACAAEAAAAQABMAAAACAAIAAAAQABQAAAACAAMAAAAQABUAAAACAAQAAAARABEAAAADAAAAAAARABIAAAADAAEAAAARABMAAAADAAIAAAARABQAAAADAAMAAAARABUAAAADAAQAAAASABIAAAAEAAEAAAASABMAAAAEAAIAAAASABQAAAAEAAMAAAASABUAAAAEAAQAAAATABEAAAAFAAAAAAATABIAAAAFAAEAAAATABMAAAAFAAIAAAATABQAAAAFAAMAAAATABUAAAAFAAQAAAAUABIAAAAGAAEAAAAUABMAAAAGAAIAAAAUABQAAAAGAAMAAAAUABUAAAAGAAQAAAAKABAAAAAJAAMAAAALABAAAAAKAAMAAAAJABAAAAAIAAMAAAAWABAAAAAIAAEAAAAaABUAAAABAAMAAAAaABYAAAABAAMAAAAaABcAAAABAAMAAAAaABgAAAABAAMAAAAaABkAAAABAAMAAAAaABoAAAABAAMAAAAaABsAAAABAAMAAAAaABwAAAABAAQAAAAbABYAAAAEAAIAAAAbABcAAAADAAMAAAAbABgAAAADAAMAAAAbABkAAAAEAAMAAAAbABoAAAAEAAMAAAAbABsAAAAEAAIAAAAbABwAAAACAAQAAAAcABcAAAAEAAMAAAAcABgAAAAEAAIAAAAcABkAAAAEAAMAAAAcABoAAAAEAAMAAAAcABsAAAACAAMAAAAcABwAAAACAAQAAAAdABcAAAAFAAIAAAAdABgAAAAEAAMAAAAdABkAAAAFAAMAAAAdABoAAAACAAMAAAAdABsAAAAEAAMAAAAdABwAAAADAAQAAAAeABcAAAAEAAEAAAAeABgAAAAFAAMAAAAeABkAAAAFAAMAAAAeABoAAAAEAAMAAAAeABsAAAADAAMAAAAeABwAAAADAAQAAAAaAA4AAAABAAIAAAAaAA8AAAABAAMAAAAaABAAAAABAAMAAAAaABEAAAABAAMAAAAaABIAAAABAAMAAAAaABMAAAABAAMAAAAaABQAAAABAAMAAAAbAA4AAAAFAAEAAAAbAA8AAAAGAAMAAAAbABAAAAAGAAMAAAAbABEAAAAGAAMAAAAbABIAAAAGAAMAAAAbABMAAAAGAAMAAAAbABQAAAAGAAMAAAAbABUAAAAFAAIAAAAcABUAAAAFAAEAAAAcABYAAAAFAAIAAAAdABYAAAAFAAEAAAAfABcAAAAEAAEAAAAfABgAAAAEAAIAAAAfABkAAAADAAMAAAAfABoAAAADAAMAAAAfABsAAAAEAAIAAAAfABwAAAAEAAQAAAAgABcAAAAGAAIAAAAgABgAAAAGAAMAAAAgABkAAAAGAAMAAAAgABoAAAAGAAMAAAAgABsAAAAGAAMAAAAgABwAAAAGAAQAAAA=")
+tile_set = ExtResource("3_w5k0a")
+
+[node name="Coins" type="Node2D" parent="." unique_id=1945250282]
+position = Vector2(267, 119)
+
+[node name="MonedaCustom" parent="Coins" unique_id=177241208 instance=ExtResource("5_ys0cc")]
+position = Vector2(-14, 104)
+
+[node name="MonedaCustom2" parent="Coins" unique_id=1476607511 instance=ExtResource("5_ys0cc")]
+position = Vector2(244, 85)
+
+[node name="MonedaCustom3" parent="Coins" unique_id=1165110798 instance=ExtResource("5_ys0cc")]
+position = Vector2(253, 241)
+
+[node name="Player" parent="." unique_id=1766812816 instance=ExtResource("7_tx6p5")]
+position = Vector2(126, 327)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1697420019]
+script = ExtResource("8_kr1yj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1245707633]
+position = Vector2(120, 556)
+shape = SubResource("RectangleShape2D_h3vhc")
+debug_color = Color(0.9552006, 0.24684614, 0.51952344, 0.41960785)
+
+[node name="Picos" type="TileMapLayer" parent="." unique_id=854812000]
+tile_map_data = PackedByteArray("AAARABEAAAAAAAAAAAAKABUAAAAAAAAAAAAbAA0AAAACAAAAAAAcABQAAAABAAAAAAAdABUAAAACAAAAAAAUABIAAAAAAAAAAAA=")
+tile_set = ExtResource("7_glm3b")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

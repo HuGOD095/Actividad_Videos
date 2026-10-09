@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ddor3rejqwf5f"]
+
+[ext_resource type="Script" uid="uid://c2obcqnq02xlt" path="res://scenes/mundo/menu_principal/menu_principal.gd" id="1_ewcek"]
+[ext_resource type="PackedScene" uid="uid://ck5mesymxgmmq" path="res://scenes/mundo/menu_principal/boton_custom.tscn" id="1_obtrx"]
+
+[node name="MenuPrincipal" type="Control" unique_id=1795283864]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ewcek")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=604643593]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 204.0
+offset_top = 196.0
+offset_right = -209.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" parent="VBoxContainer" unique_id=156739491 instance=ExtResource("1_obtrx")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start"
+
+[node name="Exit" parent="VBoxContainer" unique_id=1458231144 instance=ExtResource("1_obtrx")]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
