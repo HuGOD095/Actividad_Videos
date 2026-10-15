@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://d2tyltpl8j54f"]
 
+[ext_resource type="PackedScene" uid="uid://m8le60m6gb4n" path="res://scenes/HUD/pause.tscn" id="1_ko35g"]
 [ext_resource type="PackedScene" uid="uid://b1nkhuq5da4yw" path="res://scenes/mundo/mundo_plantilla.tscn" id="1_ryna1"]
+[ext_resource type="Script" uid="uid://cvi8pt43fyfrc" path="res://scenes/mundo/levels/nivel_2.gd" id="1_wt44x"]
 [ext_resource type="TileSet" uid="uid://ct5rlrrkibk4l" path="res://scenes/mundo/tilesets/new_tile_set.tres" id="3_w5k0a"]
 [ext_resource type="PackedScene" uid="uid://uuh3g55v6mj3" path="res://scenes/mundo/items/moneda_custom.tscn" id="5_ys0cc"]
 [ext_resource type="PackedScene" uid="uid://bqhsoh8ha55a6" path="res://scenes/HUD/hud.tscn" id="6_iobt4"]
@@ -12,6 +14,9 @@
 size = Vector2(324, 104)
 
 [node name="Nivel2" type="Node2D" unique_id=996037224]
+script = ExtResource("1_wt44x")
+
+[node name="Pause" parent="." unique_id=644976491 instance=ExtResource("1_ko35g")]
 
 [node name="ContadorCoins" parent="." unique_id=355951855 instance=ExtResource("6_iobt4")]
 

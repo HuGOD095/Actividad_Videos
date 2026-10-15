@@ -1,4 +1,6 @@
 extends CharacterBody2D
+@onready var daño_sonido: AudioStreamPlayer = $"../Damage"
+@onready var muerte_sonido: AudioStreamPlayer = $"../Dead"
 @onready var area_2d: Area2D = $DetectorPicos
 @onready var animation: AnimatedSprite2D = $Player
 @onready var hitbox: CollisionShape2D = $HitboxNormal
@@ -12,11 +14,21 @@ const coyoteDuration: float = 0.08
 var coyoteTimer: float = 0.0
 var isCrouch: bool = false
 
+var vidas: int = 3
+var retroceso: bool = false
+signal vidas_actualizadas(vidas_actuales)
 
 
 func _ready():
-	area_2d.body_entered.connect(_on_detector_picos_area_entered)
+	# Aquí hago que mi nodo detecte areas y cuerpos (area = sierra, cuerpo = picos)
+	area_2d.body_entered.connect(_on_peligro_detectado)
+	area_2d.area_entered.connect(_on_peligro_detectado)
 func _physics_process(delta):
+	if retroceso:
+		velocity.y += grav * delta
+		move_and_slide()
+		return
+	
 	_crouched()
 	_salto(delta)
 	if not isCrouch:
@@ -71,14 +83,46 @@ func _actualizar_animacion():
 		else:
 			animation.play("idle")
 
-func _on_detector_picos_area_entered(_area):
+func _on_peligro_detectado(nodo_colision):
+	if retroceso: return
+	if nodo_colision.is_in_group("enemigo"):
+		_recibir_daño(nodo_colision)
+	else:
+		_morir()
+
+func _recibir_daño(enemigo):
+	daño_sonido.play()
+	vidas -= 1
+	vidas_actualizadas.emit(vidas)
+	print("vidas restantes: ", vidas)
+	if vidas <= 0:
+		_morir()
+	else:
+		retroceso = true
+		
+		var direction_empuje = sign(global_position.x - enemigo.global_position.x)
+		if direction_empuje == 0: direction_empuje = -1
+		velocity.y = -200
+		velocity.x = direction_empuje * 120
+		
+		animation.modulate = Color(1, 0.3, 0.3)
+		
+		await get_tree().create_timer(0.2).timeout
+		
+		animation.modulate = Color(1,1,1)
+		retroceso = false
+
+func _morir():
+	muerte_sonido.play()
 	set_physics_process(false)
 	await _efecto_muerte()
-	get_tree().call_deferred("reload_current_scene")
-	
-	
+	LevelManager.reiniciar_nivel_actual()
 func _efecto_muerte():
 	var color_hexa = Color.html("#8c200c")
 	var color = create_tween()
 	color.tween_property(animation, "modulate", color_hexa, 0.5 )
 	await color.finished
+
+
+func _vida():
+	print("perdio una vida")

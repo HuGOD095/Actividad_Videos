@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dqlgaxt824gbg"]
+
+[ext_resource type="Script" uid="uid://bfo4w7pjjqyy6" path="res://scenes/mundo/levels/obstacles/sierra.gd" id="1_rhgqm"]
+[ext_resource type="Texture2D" uid="uid://da4ks2tysapbs" path="res://sprites/levels/obstaculos/saw.png" id="1_tti0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8m4p"]
+atlas = ExtResource("1_tti0x")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01gh2"]
+atlas = ExtResource("1_tti0x")
+region = Rect2(0, 34, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra8ng"]
+atlas = ExtResource("1_tti0x")
+region = Rect2(34, 34, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gb7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8m4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01gh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra8ng")
+}],
+"loop": true,
+"name": &"giro",
+"speed": 5.0
+}]
+
+[node name="Sierra" type="Node2D" unique_id=1299259920]
+script = ExtResource("1_rhgqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1834885196]
+sprite_frames = SubResource("SpriteFrames_5gb7a")
+animation = &"giro"
+frame = 2
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1273579199]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=990424323]
+polygon = PackedVector2Array(0, -14, -3, -8, -9, -9, -8, -3, -13, 0, -8, 2, -9, 9, -4, 7, 0, 12, 3, 8, 9, 9, 8, 3, 13, 0, 8, -3, 9, -9, 3, -8)

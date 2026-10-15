@@ -56,5 +56,5 @@ texture = ExtResource("1_sedfk")
 6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 3.3503437, 2.6396642, -1.5228825, 8, -8, 8, -8, 2.3350878, -4.5686493, -8)
 
 [resource]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_0ktlf")

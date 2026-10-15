@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://m8le60m6gb4n"]
+
+[ext_resource type="FontFile" uid="uid://daicfk4t43bhf" path="res://fonts/VT323-Regular.ttf" id="1_jprt3"]
+[ext_resource type="Script" uid="uid://cc30u0uqvfnq3" path="res://scenes/HUD/pause.gd" id="1_wjmfw"]
+[ext_resource type="PackedScene" uid="uid://ck5mesymxgmmq" path="res://scenes/mundo/menu_principal/boton_custom.tscn" id="2_11jyi"]
+
+[node name="Pause" type="CanvasLayer" unique_id=644976491]
+script = ExtResource("1_wjmfw")
+
+[node name="Control" type="Control" parent="." unique_id=1071322381]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1672568575]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.1149199, 0.33214658, 0.55393237, 0.42352942)
+
+[node name="Label" type="Label" parent="Control" unique_id=644121018]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_right = 280.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_jprt3")
+theme_override_font_sizes/font_size = 100
+text = "JUEGO EN PAUSA"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control" unique_id=960073788]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.0
+offset_top = -41.5
+offset_right = 264.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_jprt3")
+theme_override_font_sizes/font_size = 40
+text = "presiona esc o el boton continuar
+para quitar la pausa..."
+horizontal_alignment = 1
+
+[node name="Pause" parent="Control" unique_id=156739491 instance=ExtResource("2_11jyi")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -71.0
+offset_right = -70.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Continuar"
+
+[node name="exit" parent="Control" unique_id=1844384827 instance=ExtResource("2_11jyi")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = -69.0
+offset_right = 177.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Volver al 
+Menu"

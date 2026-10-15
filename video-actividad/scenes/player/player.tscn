@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dq7mjbv0natgu" path="res://sprites/player/chicken.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://b4to7q7shmffh" path="res://scenes/player/jugador.gd" id="1_dovo2"]
+[ext_resource type="AudioStream" uid="uid://dcsu2spu2snkm" path="res://sounds/SFX/error_003.ogg" id="3_lvxji"]
+[ext_resource type="AudioStream" uid="uid://dwnfe7u5q7oru" path="res://sounds/SFX/error_001.ogg" id="4_p47bc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
 atlas = ExtResource("1_8afob")
@@ -128,22 +130,24 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvlxm"]
-size = Vector2(14, 12)
+size = Vector2(13, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(12, 10)
+size = Vector2(15, 14)
 
 [node name="Player" type="Node2D" unique_id=1766812816]
 
 [node name="Jugador" type="CharacterBody2D" parent="." unique_id=1549050352]
+collision_mask = 5
 script = ExtResource("1_dovo2")
 
 [node name="Player" type="AnimatedSprite2D" parent="Jugador" unique_id=1787998874]
 position = Vector2(-1, -10)
 sprite_frames = SubResource("SpriteFrames_myrg7")
-animation = &"jump"
+animation = &"idle"
 
 [node name="HitboxNormal" type="CollisionShape2D" parent="Jugador" unique_id=1395489091]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_kvlxm")
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1526167715]
@@ -155,5 +159,13 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/DetectorPicos" unique_id=1413134069]
+position = Vector2(-0.5, 0)
+scale = Vector2(0.88, 0.88)
 shape = SubResource("RectangleShape2D_dovo2")
 debug_color = Color(0.43137255, 0.5921569, 0.29803923, 0.17254902)
+
+[node name="Dead" type="AudioStreamPlayer" parent="." unique_id=1598076737]
+stream = ExtResource("3_lvxji")
+
+[node name="Damage" type="AudioStreamPlayer" parent="." unique_id=2117767048]
+stream = ExtResource("4_p47bc")

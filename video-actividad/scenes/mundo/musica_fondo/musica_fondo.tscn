@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://wmr5gvdk4tyg"]
+
+[ext_resource type="Script" uid="uid://djdmkpl3ihlmt" path="res://scenes/mundo/musica_fondo/musica_fondo.gd" id="2_mrmqd"]
+
+[node name="MusicaFondo" type="AudioStreamPlayer" unique_id=1069031365]
+script = ExtResource("2_mrmqd")

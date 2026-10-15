@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d13bjmvfh860y" path="res://sprites/levels/items/coin_gold.png" id="1_c0cnr"]
 [ext_resource type="Script" uid="uid://i1cirasjsu2j" path="res://scenes/HUD/hud.gd" id="1_jjobl"]
 [ext_resource type="FontFile" uid="uid://daicfk4t43bhf" path="res://fonts/VT323-Regular.ttf" id="2_glunx"]
+[ext_resource type="Texture2D" uid="uid://ucc5digar7ra" path="res://sprites/UI/hearts.png" id="4_epp0c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glunx"]
 atlas = ExtResource("1_c0cnr")
@@ -30,3 +31,24 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_glunx")
 theme_override_font_sizes/font_size = 30
 text = ":00"
+
+[node name="Corazon1" type="Sprite2D" parent="." unique_id=895653153]
+position = Vector2(93, 13)
+scale = Vector2(2, 2)
+texture = ExtResource("4_epp0c")
+hframes = 4
+frame = 1
+
+[node name="Corazon2" type="Sprite2D" parent="." unique_id=688788654]
+position = Vector2(120, 13)
+scale = Vector2(2, 2)
+texture = ExtResource("4_epp0c")
+hframes = 4
+frame = 1
+
+[node name="Corazon3" type="Sprite2D" parent="." unique_id=814716747]
+position = Vector2(147, 13)
+scale = Vector2(2, 2)
+texture = ExtResource("4_epp0c")
+hframes = 4
+frame = 1

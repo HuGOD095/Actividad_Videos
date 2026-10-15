@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dxm2tsegh5so2" path="res://scenes/mundo/items/area_2d.gd" id="1_ecoex"]
 [ext_resource type="Texture2D" uid="uid://d13bjmvfh860y" path="res://sprites/levels/items/coin_gold.png" id="1_xly03"]
 [ext_resource type="Texture2D" uid="uid://bs7pohawysue" path="res://sprites/FX/coin_collect.png" id="2_rplel"]
+[ext_resource type="AudioStream" uid="uid://b5ug5s5cxux5s" path="res://sounds/SFX/toggle_002.ogg" id="4_2i6at"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpblr"]
 atlas = ExtResource("2_rplel")
@@ -160,5 +161,8 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=58162579]
 shape = SubResource("CircleShape2D_xly03")
+
+[node name="moneda" type="AudioStreamPlayer" parent="." unique_id=1968661242]
+stream = ExtResource("4_2i6at")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

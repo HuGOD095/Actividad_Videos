@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dkw1kddqx0eni"]
 
 [ext_resource type="PackedScene" uid="uid://b1nkhuq5da4yw" path="res://scenes/mundo/mundo_plantilla.tscn" id="1_dcbmd"]
+[ext_resource type="PackedScene" uid="uid://m8le60m6gb4n" path="res://scenes/HUD/pause.tscn" id="1_fsgaf"]
+[ext_resource type="Script" uid="uid://brnnumhlj2q6i" path="res://scenes/mundo/levels/nivel_1.gd" id="1_igaoq"]
 [ext_resource type="Texture2D" uid="uid://dmkdjyvrrvswg" path="res://sprites/levels/decoration/sign.png" id="2_d82np"]
 [ext_resource type="PackedScene" uid="uid://uuh3g55v6mj3" path="res://scenes/mundo/items/moneda_custom.tscn" id="3_0ktlf"]
 [ext_resource type="Texture2D" uid="uid://blfwk6sas0ios" path="res://sprites/levels/decoration/sign_arrow.png" id="3_l3bs8"]
@@ -9,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bqhsoh8ha55a6" path="res://scenes/HUD/hud.tscn" id="7_l3bs8"]
 [ext_resource type="Script" uid="uid://dhwetnu4ffqop" path="res://scenes/mundo/levels/area_2d.gd" id="8_nu3bm"]
 [ext_resource type="TileSet" uid="uid://bckw0yw4k4luh" path="res://scenes/mundo/tilesets/picos.tres" id="9_31sch"]
+[ext_resource type="PackedScene" uid="uid://dqlgaxt824gbg" path="res://scenes/mundo/levels/obstacles/sierra.tscn" id="10_en32e"]
+[ext_resource type="PackedScene" uid="uid://cbktbp21lqwg2" path="res://scenes/enemies/snake.tscn" id="11_2s10j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nu3bm"]
 texture = ExtResource("2_d82np")
@@ -27,6 +31,10 @@ sources/1 = SubResource("TileSetAtlasSource_31sch")
 size = Vector2(324, 104)
 
 [node name="Nivel1" type="Node2D" unique_id=612691874]
+script = ExtResource("1_igaoq")
+
+[node name="Pause" parent="." unique_id=644976491 instance=ExtResource("1_fsgaf")]
+visible = false
 
 [node name="MundoPlantilla" parent="." unique_id=1116797967 instance=ExtResource("1_dcbmd")]
 
@@ -51,6 +59,19 @@ position = Vector2(212, -1)
 [node name="MonedaCustom3" parent="Coins" unique_id=472454344 instance=ExtResource("3_0ktlf")]
 position = Vector2(42, -10)
 
+[node name="obstaculos" type="Node2D" parent="." unique_id=104812150]
+
+[node name="Picos" type="TileMapLayer" parent="obstaculos" unique_id=1855554296]
+tile_map_data = PackedByteArray("AAAJAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAATAA4AAAABAAAAAAAcAAwAAAACAAAAAAAYAAkAAAACAAAAAAAiAAwAAAAAAAAAAAA=")
+tile_set = ExtResource("9_31sch")
+
+[node name="Sierra" parent="obstaculos" unique_id=1299259920 instance=ExtResource("10_en32e")]
+position = Vector2(249, 234)
+
+[node name="Sierra2" parent="obstaculos/Sierra" unique_id=1715690605 instance=ExtResource("10_en32e")]
+position = Vector2(101, -98.999985)
+scale = Vector2(0.7, 0.7)
+
 [node name="ContadorCoins" parent="." unique_id=355951855 instance=ExtResource("7_l3bs8")]
 
 [node name="Player" parent="." unique_id=1766812816 instance=ExtResource("4_1jjl8")]
@@ -64,8 +85,13 @@ position = Vector2(100, 558)
 shape = SubResource("RectangleShape2D_l3bs8")
 debug_color = Color(0.9552006, 0.24684614, 0.51952344, 0.41960785)
 
-[node name="Picos" type="TileMapLayer" parent="." unique_id=1855554296]
-tile_map_data = PackedByteArray("AAAJAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAATAA4AAAABAAAAAAAcAAwAAAACAAAAAAAYAAkAAAACAAAAAAAiAAwAAAAAAAAAAAA=")
-tile_set = ExtResource("9_31sch")
+[node name="enemigos" type="Node2D" parent="." unique_id=751533029]
+
+[node name="Snake" parent="enemigos" unique_id=1367596144 instance=ExtResource("11_2s10j")]
+position = Vector2(204, 224)
+
+[node name="Snake2" parent="enemigos" unique_id=896546790 instance=ExtResource("11_2s10j")]
+position = Vector2(532, 179)
+scale = Vector2(0.8, 0.8)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
