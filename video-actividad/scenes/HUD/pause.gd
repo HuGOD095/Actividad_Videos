@@ -20,11 +20,14 @@ func alternar_pausa():
 	
 	if get_tree().paused:
 		visible = true
+		VirtualControls.ocultar()
 
 	else:
 		visible = false
+		VirtualControls.mostrar()
 		
 func _on_boton_pausa_pressed():
+	VirtualControls.mostrar()
 	get_tree().paused = false
 	visible = false
 func _on_boton_exit_pressed():

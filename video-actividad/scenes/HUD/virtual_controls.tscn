@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://rryd5o08xmsx"]
+
+[ext_resource type="Script" uid="uid://b3gxqi2wio57n" path="res://scenes/HUD/virtual_controls.gd" id="1_7mt13"]
+[ext_resource type="Texture2D" uid="uid://dql4gf37nelv" path="res://sprites/Controls/Controles_Flechas.png" id="1_8k4eq"]
+[ext_resource type="Texture2D" uid="uid://vpx4r7csqnhq" path="res://sprites/Controls/pause.png" id="3_ugko5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mt13"]
+atlas = ExtResource("1_8k4eq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugko5"]
+atlas = ExtResource("1_8k4eq")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36wfe"]
+atlas = ExtResource("1_8k4eq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ielr4"]
+atlas = ExtResource("1_8k4eq")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga02i"]
+atlas = ExtResource("1_8k4eq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cmwv"]
+atlas = ExtResource("1_8k4eq")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23r6s"]
+atlas = ExtResource("3_ugko5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wosiu"]
+atlas = ExtResource("3_ugko5")
+region = Rect2(0, 0, 16, 16)
+
+[node name="VirtualControls" type="CanvasLayer" unique_id=1046666147]
+script = ExtResource("1_7mt13")
+
+[node name="Left" type="TouchScreenButton" parent="." unique_id=509025741]
+modulate = Color(1, 1, 1, 0.5882353)
+position = Vector2(109.00001, 344)
+rotation = 3.1415927
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_7mt13")
+texture_pressed = SubResource("AtlasTexture_ugko5")
+action = "left"
+
+[node name="Right" type="TouchScreenButton" parent="." unique_id=212769869]
+modulate = Color(1, 1, 1, 0.5882353)
+position = Vector2(170.00003, 264)
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_36wfe")
+texture_pressed = SubResource("AtlasTexture_ielr4")
+action = "right"
+
+[node name="Jump" type="TouchScreenButton" parent="." unique_id=1366816048]
+modulate = Color(1, 1, 1, 0.5882353)
+position = Vector2(489.00006, 324)
+rotation = -1.5707964
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_ga02i")
+texture_pressed = SubResource("AtlasTexture_8cmwv")
+action = "jump"
+
+[node name="Pause" type="TouchScreenButton" parent="." unique_id=1870922416]
+modulate = Color(1, 1, 1, 0.5882353)
+position = Vector2(555, 10)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_23r6s")
+texture_pressed = SubResource("AtlasTexture_wosiu")
+action = "pause"
